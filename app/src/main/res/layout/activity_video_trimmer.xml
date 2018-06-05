@@ -1,0 +1,25 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.deep.videotrimmer.DeepVideoTrimmer
+            android:id="@+id/timeLine"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/tvCroppingMessage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:visibility="gone"
+            android:background="@color/blackOverlay"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:text="@string/str_cropping_video_please_wait"
+            android:textStyle="bold"/>
+    </FrameLayout>
+</layout>

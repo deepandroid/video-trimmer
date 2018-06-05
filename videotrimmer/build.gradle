@@ -1,0 +1,62 @@
+apply plugin: 'com.android.library'
+ext {
+    bintrayUserOrg = 'deeppatel'
+    bintrayRepo = 'videotrimmer'
+    bintrayName = 'videotrimmer'
+
+    publishedGroupId = 'com.deep.videotrimmer'
+    libraryName = 'videotrimmer'
+    artifact = 'videotrimmer'
+
+    libraryDescription = 'Whatsapp like video trimmer for android'
+
+    siteUrl = 'https://github.com/deepandroid/videotrimmer'
+    gitUrl = 'https://github.com/deepandroid/videotrimmer.git'
+
+    libraryVersion = '1.0'
+
+    developerId = 'deeppatel'
+    developerName = 'Deep Patel'
+    developerEmail = 'deep.1304@yahoo.com'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
+android {
+    compileSdkVersion 27
+    defaultConfig {
+        minSdkVersion 16
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+        vectorDrawables.useSupportLibrary = true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+dependencies {
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation 'com.googlecode.mp4parser:isoparser:1.1.20'
+}
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle'
+
+android.libraryVariants.findAll { variant -> variant.name == 'Release' } each { variant ->
+    task("generate${variant.name}Javadoc", type: Javadoc) {
+        description "Generates Javadoc for $variant.name."
+        source = variant.javaCompile.source
+        ext.androidJar = "${android.plugin.sdkDirectory}/platforms/${android.compileSdkVersion}/android.jar"
+        classpath = files(variant.javaCompile.classpath.files) + files(ext.androidJar)
+    }
+
+    task("bundle${variant.name}Javadoc", type: Zip) {
+        description "Bundles Javadoc into zip for $variant.name."
+        classifier = "javadoc"
+        from tasks["generate${variant.name}Javadoc"]
+    }
+}
