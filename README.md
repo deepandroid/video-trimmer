@@ -3,7 +3,7 @@ Whatsapp like video trimmer to trim videos within a defined file size.
 
 # Add in your project
 
-Gradle :
+**Gradle :**
 
 maven {
        url 'https://dl.bintray.com/deeppatel13/maven/'
@@ -11,7 +11,7 @@ maven {
    
 implementation 'com.deep.videotrimmer:videotrimmer:1.0'
 
-XML
+**XML :**
 
 
      <com.deep.videotrimmer.DeepVideoTrimmer
