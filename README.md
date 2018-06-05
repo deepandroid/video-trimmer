@@ -4,6 +4,7 @@ Whatsapp like video trimmer to trim videos within a defined file size.
 # Add in your project
 
 Gradle :
+
 maven {
        url 'https://dl.bintray.com/deeppatel13/maven/'
    }
