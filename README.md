@@ -1,5 +1,21 @@
-# videotrimmer
+# Video Trimmer
 Whatsapp like video trimmer to trim videos within a defined file size.
+
+# Add in your project
+
+Gradle :
+maven {
+       url 'https://dl.bintray.com/deeppatel13/maven/'
+   }
+   
+implementation 'com.deep.videotrimmer:videotrimmer:1.0'
+
+XML
+
+
+     <com.deep.videotrimmer.DeepVideoTrimmer
+          android:layout_width="match_parent"
+          android:layout_height="match_parent" />
 
 # **Customization Settings :**
 
