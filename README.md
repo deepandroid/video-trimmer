@@ -11,6 +11,8 @@ maven {
    
 implementation 'com.deep.videotrimmer:videotrimmer:1.0'
 
+>**Note:** If you have jCenter() added, then no need to write maven dependancy. only using implementation line it will be integrated.
+
 **XML :**
 
 
