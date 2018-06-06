@@ -1,3 +1,19 @@
+# Screenshots:
+**Screenshot 1 :**
+
+<img src="https://github.com/deepandroid/video-trimmer/blob/master/images/device-2018-06-06-170717.png" alt="Video Trimmer Screenshot 1" width="360" height="640" />
+
+
+**Screenshot 2 :**
+
+<img src="https://github.com/deepandroid/video-trimmer/blob/master/images/device-2018-06-06-170642.png" alt="Video Trimmer Screenshot 2" width="360" height="640" />
+
+
+**Screenshot 3 :**
+
+<img src="https://github.com/deepandroid/video-trimmer/blob/master/images/device-2018-06-06-170736.png" alt="Video Trimmer Screenshot 3" width="360" height="640" />
+
+
 # Video Trimmer
 Whatsapp like video trimmer to trim videos within a defined file size.
 
